@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --primary-color: #EDF1D6;
+    --secondary-color: #9DC08B;
+    --tertiary-color: #609966;
+    --font-family: 'Shantell Sans', cursive;
+    
+}
+body{
+    background-color: white;
+    font-family: var(--font-family);
+}
+
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.container{
+   width: 90%;
+   background-color: white;
+   max-width: 400px;
+   border-radius: 3px;
+   overflow: hidden;
+}
+
+.display{
+    position: relative;
+    text-align: right;
+    height: 4em;
+    padding: 1em;
+    width: 100%;
+    background-color: white;
+    font-size: 1.25em;
+    overflow: hidden;
+}
+.display1, .display3{
+    font-size: 0.75em;
+    color: #40513B;
+    opacity: 0.5;
+
+}
+
+.display3{
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.all-button{
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    margin-top: 1em;
+}
+.button{
+    height: 5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid white 0.3px;
+
+}
+
+.button:hover{
+    opacity: 0.8;
+}
+
+.btn-0{
+    grid-column: 1/3;
+}
+
+.operation{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+.number, .equal{
+    background-color: var(--secondary-color);
+    
+}
+
+.clear, .clear-all, .equal{
+    background-color: var(--primary-color);
+}

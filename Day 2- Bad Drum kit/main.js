@@ -5,7 +5,7 @@ window.addEventListener('keydown', (e) =>{
     audio.currentTime = 0;
     audio.play();
 })
-
+// ! this code can be more good looking I'll go back here some other time
 const button1 = document.querySelector('div[data-key="87"]');
 const button2 = document.querySelector('div[data-key="88"]');
 const button3 = document.querySelector('div[data-key="69"]');

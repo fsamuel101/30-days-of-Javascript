@@ -53,7 +53,7 @@ operations.forEach((operation) => {
 function clearVar(name = '') {
     dis1 += dis2 + ' ' + name + ' ';
     display1.innerText = dis1;
-    dis2 = ''
+    dis2 = '' 
     display2.innerText = dis2;
     display3.innerText = dis3;
 }
@@ -80,4 +80,18 @@ equal.addEventListener('click', (e) => {
     dis2 = dis3;
     display2.innerText = dis2;
 
+})
+
+clearAll.addEventListener('click', (e) =>{
+    dis1 = '';
+    dis2 = '';
+    dis3 = '';
+    display1.innerText = 0;
+    display2.innerText = 0;
+    display3.innerText = 0;
+})
+
+clear.addEventListener('click', (e) =>{
+    dis2 ='';
+    display2.innerText = dis2;
 })

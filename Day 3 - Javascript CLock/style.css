@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+:root{
+    --light-clr: #FFA3FD;
+    --dark-clr: #191825;
+    --accent-clr: #865DFF;
+}
+
+body{
+    background-color: var(--dark-clr);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Shantell Sans, cursive;
+}
+
+.clock-body{
+    border: solid 2px var(--accent-clr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    position: relative;
+    box-shadow: #FFA3FD 4px ;
+}
+
+.display{
+    background-color: var(--light-clr);
+    padding: 2em 3em;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.display h1{
+    letter-spacing: 1em;
+}
+
+.btn-container{
+    height: 3em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: right;
+    gap: 3em;
+    padding: 2em 3em;
+    
+}
+
+.btns{
+    height: 2em;
+    width: 2em;
+    border: solid red 2px;
+    border-radius: 50%;
+}

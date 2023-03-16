@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --clr-dark: #7A3E65;
+    --clr-light: #F6E1C3;
+    --clr-mid: #E9A178;
+    --clr-super-light: #F7F1E5;
+}
+
+body {
+    background-color: var(--clr-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    padding: 1rem;
+    width: clamp(50vw, 100%, 1080px);
+    position: relative;
+}
+
+header>h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1.75em;
+}
+
+header>h2 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--clr-dark);
+}
+header>small{
+    text-align: center;
+    display: block;
+}
+
+section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem
+}
+
+.task-container {
+    background-color: var(--clr-super-light);
+    color: var(--clr-dark);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icon {
+    padding: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.add-task {
+    font-size: 3rem;
+}
+
+.add-task {
+    position: fixed;
+    top: 80%;
+    left: 80%;
+}
+
+/* this is for the form */
+.form {
+
+    display: none;
+    position: absolute;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    padding: 4rem 1rem;
+    width: 100%;
+}
+
+.show{
+    display: block;
+}
+
+.form > form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form > form > label{
+    font-size: clamp(10%, 3vh, 4rem);
+
+}
+
+.inputTask{
+    border: none;
+   width: 100%;
+   padding: 2rem;
+}
+
+.inputTask:focus{
+    border: solid 0.5px black;
+}

@@ -8,6 +8,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 :root {
     --clr-dark: #7A3E65;
     --clr-light: #F6E1C3;
@@ -87,7 +91,6 @@ section {
 
 /* this is for the form */
 .form {
-
     display: none;
     position: absolute;
     /* From https://css.glass */
@@ -99,6 +102,9 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.13);
     padding: 4rem 1rem;
     width: 100%;
+    top: 0;
+    left: 0;
+    margin-top: 25%;
 }
 
 .show{

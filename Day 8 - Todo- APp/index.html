@@ -19,51 +19,31 @@
             <h2 id="time"></h2>
             <small>The time is running please finish these tasks</small>
         </header>
+
+
         <section class="task">
-            <div class="task-container">
-                <p>Go to bed</p>
-                <div>
-                    <span class=" icon edit material-symbols-outlined">
-                        edit
-                    </span>
-                    <span class=" icon done material-symbols-outlined">
-                        done
-                    </span>
-                </div>
-
-            </div>
-            <div class="task-container">
-                <p>Go to bed</p>
-                <div>
-                    <span class=" icon material-symbols-outlined">
-                        edit
-                    </span>
-                    <span class=" icon material-symbols-outlined">
-                        done
-                    </span>
-                </div>
-
-            </div>
-
-            <div class="form">
-                <form>
-                    <label for="text">Enter your Task so we can add it</label>
-                    <input class="inputTask" type="textarea" minlength="5">
-                    <button class="add">Add</button>
-                    <button onclick="cancelAdd()" class="cancel-add">Cancel</button>
-                </form>
-            </div>
 
         </section>
+
+        <div class="form">
+            <form>
+                <label for="text">Enter your Task so we can add it</label>
+                <input class="inputTask" type="textarea" minlength="5">
+                <button class="add">Add</button>
+                <button onclick="cancelAdd()" class="cancel-add">Cancel</button>
+            </form>
+        </div>
 
         <span class=" add-task material-symbols-outlined" onclick="addTask()">
             add_circle
         </span>
 
+
+
+
         <script src="main.js"></script>
 
+    </main>
 </body>
-
-</main>
 
 </html>

@@ -87,7 +87,6 @@ section {
 
 /* this is for the form */
 .form {
-
     display: none;
     position: absolute;
     /* From https://css.glass */

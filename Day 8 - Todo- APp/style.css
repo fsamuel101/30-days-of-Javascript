@@ -111,6 +111,9 @@ section {
     display: block;
 }
 
+button{
+    cursor: pointer;
+}
 .form > form{
     display: flex;
     align-items: center;
@@ -132,4 +135,14 @@ section {
 
 .inputTask:focus{
     border: solid 0.5px black;
+}
+
+
+/* edit */
+
+.edit-prompt{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
 }

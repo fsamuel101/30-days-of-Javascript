@@ -11,7 +11,7 @@ const displayTime = () => {
     setTimeout(displayTime, 1000);
 }
 
-//* to show the form to add task
+//* to show the form that add task
 const addTask = () => {
     topFunction();
     document.querySelector('.form').classList.add('show');
@@ -33,10 +33,15 @@ document.querySelector('.add').addEventListener('click', () => {
     addItem(inputTask);
 })
 
-const addItem = (item) => {
-    itemsArray.push(inputTask.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    location.reload();
+function addItem(item) {
+    if(item.value < 5){
+        window.alert('Put a proper task')
+    }else{
+        itemsArray.push(inputTask.value);
+        localStorage.setItem('items', JSON.stringify(itemsArray));
+        location.reload();
+    }
+    
 }
 
 // * To show the added items in screen
@@ -45,7 +50,10 @@ function displayItems() {
     let items = ""
     for (let i = 0; i < itemsArray.length; i++) {
         items += `<div class="task-container">
-        <p>${itemsArray[i]}</p>
+        <div>
+        <p class = 'taskSaved'>${itemsArray[i]}</p>
+        </div>
+
         <div>
             <span class=" icon edit material-symbols-outlined">
                 edit
@@ -55,14 +63,21 @@ function displayItems() {
             </span>
         </div>
 
+        <div class="edit-prompt">
+            <textarea class = "savedTask" cols="30" rows="10"></textarea>
+            <button class="saveEdit">Save</button>
+            <button class="cancelEdit">Cancel</button>
+        </div>
+
     </div>`
     }
 
     document.querySelector('.task').innerHTML = items;
-    editListener();
+   
     doneListener();
-    // saveListener();
-    // cancelListerner();
+    editListener();
+    saveListener();
+    cancelListener();
 }
 
 //* FUNCTION WHEN YOU ARE DONE WITH THE TASK
@@ -83,13 +98,57 @@ function doneListener() {
 //     location.reload();
 // }
 
+
+
 // *FUNCTION WHEN YOU WANT TO EDIT THE TASK
 
 function editListener(){
-    
+    let editButton = document.querySelectorAll('.edit');
+    let editPrompt = document.querySelectorAll('.edit-prompt');
+    let editField = document.querySelectorAll('.savedTask');
+
+    editButton.forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            editField[index].value = itemsArray[index];
+            editPrompt[index].style.display = 'block';
+            
+        })
+    })
 }
 
+//*  TO SAVE THE CHANGES
+function saveListener(){
+    let saveButton = document.querySelectorAll('.saveEdit');
+    let editPrompt = document.querySelectorAll('.edit-prompt');
+    let editField = document.querySelectorAll('.savedTask');
 
+    saveButton.forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            itemsArray[index] = editField[index].value;
+            localStorage.setItem('items', JSON.stringify(itemsArray));
+            location.reload();
+            editPrompt[index].style.display = 'none';
+        })
+    }
+    )
+
+}
+
+// *    TO CANCEL THE CHANGES
+
+function cancelListener(){
+    let cancelButton  = document.querySelectorAll('.cancelEdit');
+    let editPrompt = document.querySelectorAll('.edit-prompt');
+    let editField = document.querySelectorAll('.savedTask');
+
+    cancelButton.forEach((button, index) =>{
+        button.addEventListener('click', () => {
+            editField[index].innerText = '';
+            editPrompt[index].style.display = 'none';
+
+        })
+    })
+}
 
 window.onload = function () {
     displayTime();
